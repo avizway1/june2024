@@ -1,0 +1,150 @@
+
+====================================================================================================
+
+D: 20/06/24
+
+
+Root User : Unrestricted access on AWS account.
+** We dont use this user for day-to-day activities.
+
+Highly recommended to Enable "2/multi factor Authentication" for root user.
+
+
+IAM User : We always follow "Least privilages mechanism". Using IAM service, We can create users, groups and we can manage user accesses on AWS resources.
+-> provide permissions/access that really reqwuired to perform his job duties.
+-> 
+
+Storage Administration : IAM User with Username and password : Add permissions to access only Storage
+
+
+User : Only S3 Access
+User : Only ec2 access
+User : Provide read only access
+
+====================================================================================================
+
+D: 21/06/24
+
+Root user : When ever you are login using an email id and password, we call that user as "root user". 
+==> Root user have unrestricted access on our AWS account.
+==> Changing support plan / changing payment methods / closing aws account / transfer account.
+
+We can secure this account by enabling MFA / 2-factor authentication.
+
+
+IAM User : Identity and Access Management : In IAM, We can create users, groups and we can manage user permissions. 
+
+Policy : Set of permissions on our AWS Services.
+
+--> least privilages mechanism.
+
+
+====
+
+
+
+AWS Engineer
+--> Ec2/server issues : Username & Password : Ec2fullaccess 
+--> Database issues : Username & Password : RDS Full Access
+
+Monitoring
+--> Monitor aws resources.  , Fresher : Username & Password : ReadOnly
+
+Enable Free Tier Alerts : Login to your aws account, Navihate to "Billing and Cost management", Navihate to "billing Preferences", Enable Alert preferences. Enter your email id.
+
+
+=================
+
+Root user : Unrestricted access on AWS account.
+
+IAM user with Administrator Access : Almost similar permissions as root user, but he cannot perform account management related activities (account closing / changing support plan / changing payment methods/ Renaming account / changing email of account).
+
+
+=================
+
+Create an AWS account
+Setup password standard and Account Alias for your AWS accounts.
+
+Task 1 : create an IAM user, Add "S3FullAccess", login as this user and create a bucket. Now navigate to IAM service and try to create an IAM user and verify.!
+
+Task 2 : Create an IAM user, Add  "AdministratorAccess" policy. Login and try to access "Billing information". It will Deny. 
+--> Provide Billing access to the above IAM user.??
+
+Task 3 : create an IAM user, Add "EC2FullAccess", login as this user and try to create a bucket..
+
+=========================================================================
+
+D: 24/06/24
+
+Implicit Allow : We can access only the services allocated. If we try to access any other service, it will Deny.
+
+
+Requirement : I have an IAM User, This user need all aws services access. But, i dont want to provide s3 full access for this user.??? 
+
+
+Policy : Set of Permissions on our aws account. Policy writtens in JSON format.
+--> AWS Managed - Job Function
+--> AWS Managed Policy
+--> Customer Managed Policy
+__________________
+
+Policy : Document contains set of permissions writtens in JSON format. Policy provide permissions on AWS resources for users/groups/roles.
+
+
+--> AWS Managed Policy : Policy provided by AWS, Based on Service.
+--> AWS managed - Job function policy : policy provided by AWS, It is a combination of multiple Services. AWS provided this based on some standard jobs available in market.
+--> Customer Managed policy :  Based on customer requiremnent, he can create and manage.
+
+
+Task : Create a policy to 'deny' s3.
+
+Task 2 : Create an IAM user, provide him "AdministratorAccess" and associate "task 1 policy" to this user, login and try to create a bucket.!!!  
+output..?
+
+Task 3 : Create a Policy to allow S3FullACcess, but this should work from only one/your Network.
+** You have to add an IP address condition.
+
+https://whatismyipaddress.com/
+60.243.230.180/32
+
+=====================================================================================
+
+D: 25/06/24
+
+
+policy simulator : We can simulate IAM user permissions and get information about the performing activity (allow/deny).
+
+
+CloudTrail : Logging service in AWS. It logs everything (including refresh also).
+--> Enabled by default. We dont have option disable it. 
+--> Defaultly it can store last 90 days logs.
+
+
+Credential report : It gives all IAM users last logged in, pwd expiration, creation data and accesskeys..
+
+
+We will get an ARN : Amazon Resource Name, Unique identifier for our resource. 
+
+arn:aws:iam::501170964283:user/Avinash_T
+arn:aws:iam::501170964283:group/Admins
+arn:aws:s3:::avinash
+
+
+Inline : Not a reusable policy. We can apply policy for specific resource only (user, group or role). Hard to track this, Only in special occassions we use this inline policy.
+--> To overcome the policy count limitations / character limitation, we can use this inline policy.
+
+
+Permissions boundary : Set maximum permissions a user can get. 
+
+
+===========
+
+Task  : Create a custom policy to activate MFA for IAM users, He himself able to activate MFA. 
+	Create an IAM user, provide S3FullAccess. Login as this user and Now try to "Activate MFA". It will give error. Fix this errors and allow him to activate MFA.
+
+
+Task 2 : Create an IAM user, Want to provide "S3FullAccess" with our custom policy,  We need to restrict this user to work only on specific region (mumbai/ap-south-1).
+
+Create a policy allow all s3 actions on all resources, Add a "region" condition.
+
+==> Login as this user, Try to create bucket in "mumbai" it should allow. If you choose any other regions it should not allow.
