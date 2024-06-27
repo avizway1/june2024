@@ -51,8 +51,120 @@ Preferences --> Billing preferences --> Receive Free Tier Usage Alerts --> Enabl
 
 Task 2 : Create an s3 bucket, Upload an object, Access the Object as an IAM user.
 
-Make it puiblic and access same object using public URL.
+Make it public and access same object using public URL.
 
 
 ==============================================================================================
+
+D: 27/06/24
+
+S3 Storage Classes : 
+
+--> S3 Standard : Defualt storage class for all the data we upload to s3. Data will be available immedeatly.
+Designed to store : Frequently accessed data. 
+Availability : 99.99%,  Durability: 99.999999999 (11 9's) 
+Data replicates across : >= 3 AZs
+
+--> Standard-IA : Data will be available immedeatly. Designed to store : infrequently accessed data
+Avai : 99.9%, Durability : 99.999999999 (11 9's) 
+Data replicates across : >= 3 AZs
+
+--> One Zone-IA : Data will be available immedeatly. Designed to store : infrequently accessed data. Store only non-critical data. Cost less than 40% compared to Standard-IA.
+Avai : 99.5 %, Durability : 99.999999999 (11 9's) 
+Data replicates across : 1 AZs
+
+--> Glacier Flexible Retrieval (Formerly Glacier) : Long-term data archiving with retrieval times ranging from minutes to hours. Data won't be available immedeatly. We need to initiate a data restration to view the data. Restoration takes (1 min - 5 Hrs)
+Avai : 99.99 %, Durability : 99.999999999 (11 9's) 
+Data replicates across : >= 3 AZs
+
+--> Glacier Instant Retrieval : Long-lived archive data accessed once a quarter with instant retrieval in milliseconds. 
+
+--> Glacier Deep Archieve : Long-term data archiving with retrieval times ranging from 12 hrs. Data won't be available immedeatly. We need to initiate a data restration to view the data. Restoration takes (5 - 12 Hrs)
+Avai : 99.99 %, Durability : 99.999999999 (11 9's) 
+Data replicates across : >= 3 AZs
+..
+
+S3 Intelligent Tier : If we have unknown access pattern, we can choose. 
+Avai : 99.9 %, Durability : 99.999999999 (11 9's) 
+Data replicates across : >= 3 AZs
+
+RRS : Redused Redundancy Storage : Not Recommanded : Less durability.. 
+Durability : 99.99%, As we have less durability we have high chances to loss the data when compared to another storage classes.
+
+
+S3 Pricing : 
+--> How much data we are storing.
+--> How many GET/PUT operations (uploads/downloaded object count)
+--> Data retrivals
+
+S3 FREE TIER :
+--> 5 GB Standard Storage
+--> 2000 PUT Operations (upload)
+--> 20,000 GET operation (open/download)
+
+Glacier data retrival : 
+Bulk retrieval : Typically within 5-12 hours.
+Standard retrieval : Typically within 3-5 hours.
+Expedited retrieval : Typically within 1-5 minutes when retrieving less than 250 MB.
+
+** Only S3 standard comes under free tier eligibility.
+
+
+------------
+
+--> versioning helps us to get our data to correct state, AWS maintains multiple copies of our data.
+--> If we accedentally overwrite any data or delete any file, we can get it to correct state.
+
+If you are typing "Delete" ==> you'll get delete Marker. 
+If you are typing "perm Delete" ==> You wont get Delete marker.
+
+Delete the "Delete Marker" to get your object back.
+_________
+
+Version : AWS maintains multiple copies in s3 bucket. 
+--> Defaultly versioning will be in Suspended state.
+
+--> When versioning is enabled on bucket, If we delete an object
+
+Versioning : HIDE
+--> S3 will show most recent uploaded object only / Current version objects.
+--> We will get a Delete Marker. 
+--> TO get object back / undo delete, Set Version to SHOW, Delete the delete marker.
+
+Versioning : SHOW
+--> If we delete an object, it deletes permanently.
+_____________________________________________________________________________________
+
+
+Storage class
+Versioning
+Life Cycle rule
+Replication
+Encryption
+Bucket policy
+Static website hosting
+
+
+
+s3 standard : Designed to store frequrntly accessed data.  We can access data without any delays.
+>=3 copies
+
+Standard-IA (Infrequrntly Accessed) : Designed to store less frequrntly accessed data.  We can access data without any delays.
+>=3 copies
+
+OneZone-IA : Same as Standard-IA, but, AWS maintains only one copy of our data in backend.
+1 copy
+
+Glacier : Designed to archive data, We cannot access data immediatly. We have to initiate a data restoration to access data.
+
+Intelligent Tier : When we are not sure about our access patterns.. 
+
+
+Version : 
+
+
+
+
+
+
 
