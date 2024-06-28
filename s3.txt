@@ -133,38 +133,46 @@ Versioning : HIDE
 
 Versioning : SHOW
 --> If we delete an object, it deletes permanently.
-_____________________________________________________________________________________
+
+======================================================================================================
+
+D: 28/06/2024
+
+Life Cycle Management Rule : 
+
+--> We can apply Rule to entire bucket
+--> We can limit rule to a prefix (Folder)
+--> We can limit rule to objects by specifing a "Tag"
 
 
-Storage class
-Versioning
-Life Cycle rule
-Replication
-Encryption
-Bucket policy
-Static website hosting
+S3 Standard --> StandardIA/IT --> Glacier --> Delete
+S3 Standard --> Glacier --> Delete
+S3 Standard --> Delete
 
 
+===========
 
-s3 standard : Designed to store frequrntly accessed data.  We can access data without any delays.
->=3 copies
+S3 Static Website Hostic : 
 
-Standard-IA (Infrequrntly Accessed) : Designed to store less frequrntly accessed data.  We can access data without any delays.
->=3 copies
+--> We need to make data public read, then only our website will deliver. 
+--> Purchased Domain name should be same as Bucket name. 
 
-OneZone-IA : Same as Standard-IA, but, AWS maintains only one copy of our data in backend.
-1 copy
+http://learnaws.co.in.s3-website.ap-south-1.amazonaws.com  ==> learnaws.co.in
 
-Glacier : Designed to archive data, We cannot access data immediatly. We have to initiate a data restoration to access data.
+http status codes :
+2XX : OK/Success
+3XX : Redirection
+4XX : Client sider error
+5XX : Server sider error
 
-Intelligent Tier : When we are not sure about our access patterns.. 
-
-
-Version : 
+https://www.free-css.com/free-css-templates
 
 
 
 
+Task : Configure life cycle management rule to transit data from S3Standard to "Delete" after 2 days.
 
+Task : Download a template from Internet. Deliver the webiste using s3 - static webiste feature.
 
+======================================================================================================
 
