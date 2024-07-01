@@ -167,12 +167,50 @@ http status codes :
 
 https://www.free-css.com/free-css-templates
 
-
-
-
 Task : Configure life cycle management rule to transit data from S3Standard to "Delete" after 2 days.
 
 Task : Download a template from Internet. Deliver the webiste using s3 - static webiste feature.
 
 ======================================================================================================
+
+D: 01/07/2024
+
+CRR / SRR : 
+--> Source bucket and destination bucket must be enabled with versioning. 
+--> Existing objects will not replicate to the destination bucket.
+--> All future / subsequent uploads will replicate to destination bucket. 
+
+RTC : Replication time control : Data replicates to destination bucket with in 15 Min. (99.99% of the data) : COST US
+
+___
+
+Data transfer from One region to another region "cost us". 
+Data transfer within a region won't cost us anything.
+_______________________
+
+aws s3 sync s3://sourcebucket s3://Targetpath		==> 12:00AM   (task scheduler / cron job)
+
+aws s3 sync localfolder s3://s3backupbucket
+
+_______________________
+
+Event notifications : 
+
+--> SNS : Simple Notification Service : 1000 EMAILs/Month Free Tier eligibility
+--> SQS : Simple Queue Service
+--> Lambda 
+
+--> Make sure you edit the SNS topic's "Access Policy to everyone".
+
+______________________
+
+
+Task 1 : Create a bucket in N.Virginia, Configure Versioning and test it. 
+
+Task 2 :  Create another bucker in N Virginia region only.. configure same region replication between these buckets.
+
+Task 3 : Configure to receive alerts to your email id when any Object deleted from an S3 bucket.
+
+
+
 
