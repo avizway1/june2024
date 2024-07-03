@@ -1,0 +1,128 @@
+Task 2 Policy example : 
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Deny",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:*",
+            "Resource": [
+                "arn:aws:s3:::bucketname",
+                "arn:aws:s3:::bucketname/*"
+            ],
+            "Condition": {
+                "StringNotLike": {
+                    "aws:PrincipalArn": [
+                        "arn:aws:iam::1212121212:user/11111111"
+                    ]
+                }
+            }
+        }
+    ]
+}
+
+=============
+
+------------------------------
+Task 4 : 
+
+{
+    "Version": "2012-10-17",
+    "Id": "Policy1691635080227",
+    "Statement": [
+        {
+            "Sid": "Stmt1691635078528",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::policy.test.s3user/*"
+        }
+    ]
+}
+
+============
+
+Allow Write Access to a Specific Prefix : pending
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:PutObject",
+            "Resource": "arn:aws:s3:::BUCKET-NAME/uploads/*"
+        }
+    ]
+}
+
+
+==========
+
+Allow Read Access from a Specific IP Address
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::BUCKET-NAME/*",
+            "Condition": {
+                "IpAddress": {
+                    "aws:SourceIp": "202.153.35.250/32"
+                }
+            }
+        }
+    ]
+}
+
+
+=========
+
+Allow Access to Specific Users Only
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": [
+                    "arn:aws:iam::your-account-id:user/User1",
+                    "arn:aws:iam::your-account-id:user/User2"
+                ]
+            },
+            "Action": "s3:*",
+            "Resource": "arn:aws:s3:::BUCKET-NAME/*"
+        }
+    ]
+}
+
+
+=============
+
+Deny Objects That Are Not SSE-KMS
+
+
+{
+"Version": "2012-10-17",
+"Id": "PutObjPolicy",
+"Statement": [{
+  "Sid": "DenyObjectsThatAreNotSSEKMS",
+  "Principal": "*",
+  "Effect": "Deny",
+  "Action": "s3:PutObject",
+  "Resource": "arn:aws:s3:::DOC-EXAMPLE-BUCKET/*",
+  "Condition": {
+    "Null": {
+      "s3:x-amz-server-side-encryption-aws-kms-key-id": "true"
+    }
+  }
+}]
+}
+

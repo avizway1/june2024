@@ -259,5 +259,78 @@ Steps : Create an IAM user provide s3 readonly/fullaccess, generate Accesskey an
 
 Task 2 : Enable Encryption on s3 bucket and test it. (SSE-S3/AWS Managed key KMS-DMK)
 
+================================================================================================
+
+D: 
 
 
+Requirement : I want an IAM user, who can perform everything on s3 platform. But i dont want to allow this user to "DeleteObject" from one specific s3 bucket.
+
+Requi: IAM user.. S3FullAccess, 
+
+
+Deny upload object operation on a particular bucket. : Bucket policy
+
+Bucket ARN : arn:aws:s3:::avinash.bucket
+IAM User ARN / Principal : arn:aws:iam::501170964283:user/s3user
+Effect : Allow / Deny : Deny
+Action / Operation : PutObject, DeleteBucket
+
+
+Object level / Inside bucket possible operation : arn:aws:s3:::avinash.bucket/*
+Bucket level : arn:aws:s3:::avinash.bucket
+if you dont know bucket level/object level ; give both
+(arn:aws:s3:::BUCKETNAME,arn:aws:s3:::BUCKETNAME/*)
+
+
+arn:aws:s3:::0105.avinash  Bucket : delete bucket / enable verisoni / enable policy/ acl
+arn:aws:s3:::0105.avinash/*  Object : delete object/ uplaod obj/. over obj
+
+arn:aws:s3:::0105.avinash,arn:aws:s3:::0105.avinash/*
+
+--------------------
+
+Task : Create an IAM user with "S3FullAccess". 
+We need to restrict/DENY this user to perform "DeleteObject" opertion from a specific bucket (bucketname)
+
+
+Task 2 : create a bucket policy, that allow "one spcific IAM USer", to perform anything on this bucket. Remaining all users should not able to perform anything on this bucket.
+--> Refer the policy document
+
+**
+Task 3 : Create a bucket, Allocate this bucket to only one specific IAM user. Allow him to perform "GetObject", "PutObject" and "DeleteObject". This User should not able to view all the bucket we have in s3 platform.
+--> Only with the help of a bucket URL, this guy should able to view.   --> "Perform using IAM POLICY"
+
+** https://repost.aws/knowledge-center/s3-console-access-certain-bucket
+
+
+Task 4 : Make a bucket public for eveyone using "BUCKET POLICY".
+--> Refer the shared policy document.
+
+
+=================================================================================
+
+
+What is Presign URL :  Short lived urls. 
+--> Without making bucket/object public, we can share an s3 object with presign url, this URL works only for sometime.
+
+
+-------------------------
+
+Object Lock : 
+
+--> Versioning must be enabled.
+
+Permanently allows objects in this bucket to be locked. Additional Object Lock configuration is required in bucket details after bucket creation to protect objects in this bucket from being deleted or overwritten.
+
+Governance : Users with specific IAM permissions can overwrite or delete protected object versions during the retention period.
+
+Compliance : No users can overwrite or delete protected object versions during the retention period.
+
+_____
+
+
+
+
+
+https://s3.ap-south-2.amazonaws.com/avizway.encry.test/httptohttps.txt?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCmFwLXNvdXRoLTEiRzBFAiEA0S6xQ4GgpBKgFyUG03qoDP5QBH4xMQVEemp%2FQtJ9WVcCIElpCDRmrmdrejRxujzg09fLbGfD16d2U1KMI9rHSDHHKoYDCIP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQARoMNTAxMTcwOTY0MjgzIgxLEuBPdg2hfK64sssq2gLbBsroZK%2BYhktMyPHXjvmvFZkfqsXcIhtMS4gNN5FxV7ACdPtrzVCka8cpHqie76zI7GYs3%2B3DkwRmahJWyzNYkh4TgwJGAojm3vrg%2BK2qNfbqff3JWtwTkehog0SSClS04sgguOZzw3Lbpi5ZygsMm8fjESjrGYXd%2B7qq3QcNCLmFi%2B30AoYf8PB33d2iCAtPE%2FGbQ9QJ4yJ%2Fs%2BadWu%2BmI04x95QnHM8u5Ze96c5CRG4OzsahrYGm7DNqTGTUCn2kVioQo4x9C3k1g5iamO8LJljSaVnF%2BgRquJO%2F2aAU%2Fl8Ex56QKZCc0tQwpZvmwEFUtmLOg17ujiYHh%2FUbK4khIG9LMlrVZB5KpPH9k83Roh5njfuJAZk8nAZnwZ1DFEYsOlVC5Cwh7NxKao6C48lQnYnnOvIa9oJBh0mGZXHy1FcAW7MsCp6RIRU%2Fb26NjN92wsFJTNOh%2FpXLMPHfkrQGOrMCcI3Vpvp0bOWRfNWzbMcDJUld83HNdA8ttRJs%2BdXm6pmWNHf9wu4xjIpGizh7Xp2vIBWdNbw7KBtUpv%2BkR7mceua%2BArjj0YwzrJzzoe%2FeKG2yqWI5tJ8x18hm5uUxPFqGKWIztogSeRMyQkJVVhACrfdb0rd6l7wBMvvRSZCatpnCKS6QMX13WjQRPvIIGsXi4qPnVsT9SwHlAof8zBxPfxBWAs39DlGFnJuTaQ3olum%2BggScQ3c6CjnFmAUxsePeXaGAXwjKuuNZZPdlRnAOgZUsXpk4dSqk5t35ISVu%2B8Wi02GufadMHwW91p2JMfHjsRfg18sdW2NFKTZ9oGwYtqj39Xecr5%2Fml3NkPwq0nIKnYdMZA1mK9judyDhl8BDMswnHQ3%2BBfuf3%2F5xyHqGPJN128Q%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240703T030128Z&X-Amz-SignedHeaders=host&X-Amz-Expires=120&X-Amz-Credential=ASIAXJMA6A452VCX3HVY%2F20240703%2Fap-south-2%2Fs3%2Faws4_request&X-Amz-Signature=f10e86fafd4e37e4686df5c55a859b72706951f4c48b39935352cf8a79891524
