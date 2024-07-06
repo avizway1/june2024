@@ -29,10 +29,6 @@ Spot instances : When we have flexible start/stop durations.. No Criticaldata/ a
 
 1 hr 50 Min : Price increased, AWS Terminated our Instance : 1 Hr
 1 hr 50 Min : Price not increased, You Terminated our Instance : 1 Hr 50 Min
-______________________________________
-
-Only On-Demand ec2 instances comes under free tier eligibility.
-** Fix to one region. ap-south-1 (personal account) / us-east-1 (sandbox)
 
 =======================================================================================
 
@@ -64,6 +60,9 @@ m5.large	: 2 CPU, 8 RAM
 t4g.medium	: 2 cpu, 4 ram
 
 Maintenance windows : Sat 03 AM IST.. : Greenzone window : CRQ (Change Request)
+-> Implementaiton Plan : What changes you are applying and how.
+-> Validations : Changes status, Success/failed/issues.
+-> Roll Back plan : If any issue, how ca we get it to previous state.
 
 Step 3 : Configure additional settings
 	VPC, ROles, userdata
@@ -152,4 +151,7 @@ Task 4 : Once Task 3 completed, Try to Take a session with task3 user along.
 
 
 =======================================================================================
+
+
+
 
