@@ -268,5 +268,63 @@ Ansible : https://youtube.com/playlist?list=PLneBjIzDLECkLTuhBUwTEo5zWQAIyNI21&s
 Interview questions based on module : https://youtube.com/playlist?list=PLneBjIzDLECkZXsv7g-YsP6bBteTpTgLC&si=GB1ZQj5q1LJS-U7D
 
 
+===========================================================================
+
+D: 09/07/2024
+
+whoami		--> tells us as what user we are working.
+sudo		--> allow user to execute the command with root level permissions
+sudo su		--> Switch to root user
+exit		--> Exit from root user to ec2-user
+clear		--> Clears the screen
+
+ls			--> List the files/folders
+ls -ll		--> Longh list the files/folders from current path
+ls -a		--> List all including hidden files
+pwd			--> Print working directory
+mkdir		--> Create a Directory/Folder
+touch 		--> o bytes file/ plain file
+cd			--> Change directory
+cd ..		--> To come one step back from current path.
+rmdir		--> remove directory, if it is empty.
+rm -rf foldername/	--> Delete a directory that contains files forecefully and recursively.
+
+copy and paste :  cp
+cut and paste  :  mv
+
+mv/cp source-file destination-path
+
+to rename a file we use "mv" command :  mv oldfilename newfilename
+
+_________________________
+
+vim / vi / nano
+
+VIM Editor : 
+
+vim filename	--> Open this file in VIM editor
+
+Press I			--> INSERT Mode
+Press ESC		--> ReadOnly Mode
+:wq				--> Write and Quit (Write changes to file and quit the editor)
+:q!				--> Quit the Editor without writing the changes
+
+set number		--> To set page numbers in VIM
+set nonumber	--> To remove page numbers
+dd				--> Delete the current line
+10dd			--> Delete 10 lines from cursor
+
+=====================================================================================
+
+https://aws.amazon.com/events/awsome-day/awsome-day-online/?sc_icampaign=event_awsome-day-online-hero&sc_ichannel=ha&sc_icontent=awssm-4496_event&sc_iplace=hero&trk=5e07226f-63ba-4c49-bc38-5c4c5bd3ee86~ha_awssm-4496_event&trkCampaign=awsome-day-online
+
+=====================================================================================
+
+task : Complete first 4 modules or, Atleast 2 modules.
+
+https://linuxsurvival.com/
+
+
+
 
 
