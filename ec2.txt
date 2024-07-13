@@ -369,18 +369,6 @@ We get 2 types of errors..
 1. Timeout : Your req not able to reach the web server. problem with Security group.
 2. Connection refused : Service is not in running state. Verify status by running "service httpd status"
 
-Tool to Move the files to amazon linux ec2 instance : WinSCP
-
-current Ip : http://54.196.103.169/  Stop and start
-
---------
-
-EIP : Elastic IP Address : If you need a dedicated/fixed IP address for your ec2 instance, you can generate an EIP and associate it.
--> EIP wont change even after performing STOP/START operation on ec2 instance.
-NO FREE TIER ELIGIBILITY. IT WILL COST YOU.
-
-
-
 
 Task 1 : Launch an amazon linux 2, make it as webserver and deliver custom web content. (httpd-apache)
 
@@ -588,7 +576,7 @@ Interview : How to encrypt an existing unencrypted ebs volume.?
 ______________________________________________________________________________________
 
 
-D: 13/07
+D: 13/07/2024
 
 
 SOP : Standard Operational Procedure : 
@@ -617,6 +605,83 @@ Task 1 : Launch an ec2 instance in ap-south-1a.. Create a "New volume with 1 gb 
 Task 2 : Launch Another ec2 instance in ap-south-1b..
 Get the 2gb volume data from instance 1a to newly launch 1b ec2 instance.. Make Same volume available to "1b instance"..!!
 
-Task : Go through below article and try to understand it. https://aws.amazon.com/blogs/storage/automating-amazon-ebs-snapshot-and-ami-management-using-amazon-dlm/
+============================================================================================
+
+Tool to Move the files to amazon linux ec2 instance from Windows : "WinSCP"
+
+--------
+
+current IP : http://3.109.207.187/  
+
+13.233.101.243
+
+Stop and start this instance.
+
+
+
+--------
+
+EIP : Elastic IP Address : If you need a dedicated/fixed IP address for your ec2 instance, you can generate an EIP and associate it.
+-> EIP wont change even after performing STOP/START operation on ec2 instance.
+
+NO FREE TIER ELIGIBILITY. IT WILL COST YOU.
+
+
+ENI (Elastic Network Interface): We can allocate multiple Network Interface Cards (NICard) to a single ec2 instance.
+
+
+Task 1 : Install WinSCP in your laptop, and connect to aws ec2 linux instance and copy some files from your local laptop to aws ec2 instance.
+
+If you are using mac os, use "SCP" command and try to copy a file to ec2 instance.
+
+
+Task 2 : Go through below article and try to understand it. https://aws.amazon.com/blogs/storage/automating-amazon-ebs-snapshot-and-ami-management-using-amazon-dlm/
+
+
+
+
+
+
+
+
+
+
+
+
 
 ============================================================================================
+
+D: 15/07/2024
+
+
+Scenario : 10 ec2 instances.. AV, MS Office, Custom WP, CUstom OS users, Applications, IIS.. 
+
+--> Launching 10 instance : connect to 10 instance and install everything in all 10 instance.. 
+--> 1 ec2 instance : Install everything.. : Keep it as Image : --> Launch "n" number using image..
+
+Client : OS with CIS Benchmarks (Center for Internet Security) : 
+
+*** GoldenAMI = CUstomized AMI.. Won't work with keypairs.. We need to change the password.. 
+
+Ec2 instance , Perform customizations --> Create a Golden AMI --> From GAMI we can launch n num of ec2 instance.. 
+
+Similar to Snapshots..
+
+--> We can launch another instance in same region using GAMI.
+--> We can copy Region 1 GAMI to Region 2, And launch an ec2 instance in Region 2. 
+--> We can share GAMI from Acc 1 to Acc 2. 
+--> We can share GAMI to public.
+
+______________________________________
+
+Task 1 : Launch Linux ec2 instance, Make it as webserver.. Add custom webpages.. Add a 2gb volume while launching and make it perm mount.. then Create a Golden AMI and 
+-> Launch instance from GAMI and test output. 
+
+
+Task 2 : Launch a Windows ec2 instance, Connect to it.. CHANGE ADMINISTRATOR PASSWORD, change wallpaper, install "putty" software, Install IIS and deliver custom webpage..
+Now, STOP the INSTANCE and create a GoldenAMi. 
+-> Launch an instance from GAMI, connect and Verify you got all custom settings or not.???
+
+
+Task 3 : How to setup password authentication to ec2-user user instead of keypair authentication.
+https://comtechies.com/password-authentication-aws-ec2.html
