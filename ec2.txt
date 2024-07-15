@@ -638,17 +638,6 @@ If you are using mac os, use "SCP" command and try to copy a file to ec2 instanc
 Task 2 : Go through below article and try to understand it. https://aws.amazon.com/blogs/storage/automating-amazon-ebs-snapshot-and-ami-management-using-amazon-dlm/
 
 
-
-
-
-
-
-
-
-
-
-
-
 ============================================================================================
 
 D: 15/07/2024
@@ -678,10 +667,13 @@ Task 1 : Launch Linux ec2 instance, Make it as webserver.. Add custom webpages..
 -> Launch instance from GAMI and test output. 
 
 
-Task 2 : Launch a Windows ec2 instance, Connect to it.. CHANGE ADMINISTRATOR PASSWORD, change wallpaper, install "putty" software, Install IIS and deliver custom webpage..
+Task 2 : Launch a Windows ec2 instance, Connect to it.. CHANGE ADMINISTRATOR PASSWORD, change wallpaper, install "putty" software, Install IIS and deliver custom webpage, Change timezone also..
 Now, STOP the INSTANCE and create a GoldenAMi. 
 -> Launch an instance from GAMI, connect and Verify you got all custom settings or not.???
 
 
 Task 3 : How to setup password authentication to ec2-user user instead of keypair authentication.
 https://comtechies.com/password-authentication-aws-ec2.html
+
+
+
