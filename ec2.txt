@@ -769,6 +769,11 @@ Application Load balancing algorithm :
 
 -----------------------
 
+Key Diff: https://aws.amazon.com/compare/the-difference-between-the-difference-between-application-network-and-gateway-load-balancing/#:~:text=An%20ALB%20uses%20a%20round,targets%20in%20a%20predetermined%20manner.
+
+-----------------------
+
+
 Network ELB : TCP.. 
 --> Flow Hash algorithm.
 --> We CAN assign a dedicated IP address for our network ELB. Its not possible for ALB.
@@ -784,7 +789,7 @@ Free Tier : 750 hrs/month
 --> use same SG for all your web servers. Initially open for everyone, then modify it later.
 --> Use a diff SG for your load balancer. Open 80 for everyone.
 
-SG pipeline mechanism : open port 80 on your ec2 instances SG, Instead open for everyone, Add your Load balancer Security group.
+SG pipeline mechanism : open port 80 on your ec2 instances SG, Instead of open for everyone, Add your Load balancer Security group.
 
 =========================================================================================
 
@@ -798,7 +803,7 @@ Launch another ec2 instance and configure apache to run on port 8080.
 Task 2 : on existing LB, Add listeners on 8080 and test output on 8080.
 
 **Open port 8080 at your ec2 SG and ELb SG.
- 
+
 
 Task 3 : what is Telnet and how to use telnet, test it with an ec2 instance on port 22.
 
@@ -806,3 +811,29 @@ telnet to google on port 443.
 telnet to your ec2 instance on port 22 and test it.
 
 
+Task 4 : Configure and deliver NLB. 
+
+Task 5 : Make sure you implement Pipeline mechanism.
+
+=========================================================================================
+
+
+ASG : Auto Scaling group : 
+
+--> We can run our applicaiton with fixed Number of resources. (My app always should have 2 ec2 instances)
+
+--> We can scakle our appliucation based on the load/schedule. (when cpu usage is less i want to run my app with 2 instances, when cpu usage is moderate: 4 instance, CPU usage is High : 8 Instances) 
+
+
+Pre-Req: 
+1. GoldenAMI
+2. ELB
+
+ASG Creation : 
+Step 1 : Create a launch Template
+Step 2 : Configure ASG
+
+
+Create a launch Template : You have to define all the settings you required for your ec2 instance, you are launching as part of ASG. (AMI, SG, Keypair, Instance type)
+
+Create an ASG : What scaling method you required, desired count, in what vpc you want to run instances.
