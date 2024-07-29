@@ -1271,19 +1271,10 @@ Dedicated and Shared tenancy :
 	--> Dedicated instance : Dedicated instance provided by aws. No control on backend process.
 	--> Dedicated host : We can apply licenses at underlying physical resources. Also, we can launch multiple instances on a dedicated host.
 
+====================================================================================================
 
+D: 29/07/2024
 
-
-
-
-
-
-
-
-
-
-
-===================================
 
 ElasticBeanstalk : It provides preconfigured platforms. : Its a PaaS (platform as a Service)
 --> Python, java, go, ruby, php, .net, Docker
@@ -1342,6 +1333,34 @@ go though ec2 video
 
 
 
+
+curl http://169.254.169.254/latest/meta-data/network/interfaces/macs/02:a0:40:f7:f2:21/owner-id
+
+ami-id
+ami-launch-index
+ami-manifest-path
+block-device-mapping/
+events/
+hostname
+identity-credentials/
+instance-action
+instance-id
+instance-life-cycle
+instance-type
+local-hostname
+local-ipv4
+mac
+metrics/
+network/
+placement/
+profile
+public-hostname
+public-ipv4
+public-keys/
+reservation-id
+security-groups
+services/
+system
 
 
 
