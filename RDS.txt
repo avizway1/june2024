@@ -121,13 +121,14 @@ Task 5 : Launch a MS SQL RDS db (Express) instance in CUstomVPCs Private SUbnet.
 
 
 
-
-
-
-
-
-
 ================================================================================================
 
 MultiAZ Deployment : Designed for Failover/FT purpose. : Creates a standby in a different Availability Zone (AZ) to provide data redundancy, eliminate I/O freezes, and minimize latency spikes during system backups.
+
+
+
+myrdsdb.cfpgnjehw330.ap-south-1.rds.amazonaws.com
+
+
+
 
