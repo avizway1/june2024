@@ -196,28 +196,6 @@ Migrate existing and continue migration.
 
 Task Help Video : https://www.youtube.com/watch?v=SXuOjfKpIrs
 
--------
-
-===========================================================================================
-
-How to connect to Redshift : 
-https://docs.aws.amazon.com/redshift/latest/mgmt/connecting-using-workbench.html
-Tool Name : sql workbenh/J.
-
-
-OLAP : Online Analytical process : Redshift
-OLTP : Online Transactional process : RDS
-
-Redshift: 
-leader node : Designed to run query on compute nodes.
-Compute Node : it stores actual data
-
-
-Introduction to Redshift : https://www.youtube.com/watch?v=tSHCf1koYk8
-Redshift Serverless : https://www.youtube.com/watch?v=mEEbqIdQf7w
-Load Data from s3 to Redshift : https://www.youtube.com/watch?v=AcVNDbSy9L8
-Elasticache: https://www.youtube.com/watch?v=wp1QnBW2kIM
-
 
 =================================
 
@@ -253,11 +231,27 @@ video : https://www.youtube.com/watch?v=7BkGGc8u2Yk
 Task 3 : Perform Database Migration as we discussed.
 
 
+===========================================================================================
+
+How to connect to Redshift : 
+https://docs.aws.amazon.com/redshift/latest/mgmt/connecting-using-workbench.html
+Tool Name : sql workbenh/J.
 
 
+OLAP : Online Analytical process : Redshift
+OLTP : Online Transactional process : RDS
+
+Redshift: 
+leader node : Designed to run query on compute nodes.
+Compute Node : it stores actual data
 
 
+Introduction to Redshift : https://www.youtube.com/watch?v=tSHCf1koYk8
+Redshift Serverless : https://www.youtube.com/watch?v=mEEbqIdQf7w
+Load Data from s3 to Redshift : https://www.youtube.com/watch?v=AcVNDbSy9L8
+Elasticache: https://www.youtube.com/watch?v=wp1QnBW2kIM
 
+===========================================================================================
 
 
 CREATE SCHEMA finance;
