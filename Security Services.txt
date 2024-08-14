@@ -77,13 +77,7 @@ Shield advanced cost us 3000$/Month.. AWS Team monitor the DDoS attack/traffic.
 
 =================================================================================================
 
-
-
-
-
-
-
-_________________________________________________________________________________
+D: 14/05/2024
 
 AWS Cloudfront : AWS CDN Service (Content Delivery Network) : Akamai, cloudflair..
 --> CLoudfront have a feature to protect our resources from DDoS attack.
@@ -102,13 +96,31 @@ We must create SSL Cert in N Virginia to map with cloudfront distribution.
 
 ____________
 
+Task : Create an ELB, Deliver your ELB hosted website with Cloudfront distribution.
+Task : Create an S3 bucket, Place some data and deliver the data using Cloudfront distribution.
 
-Task : Create an ELB, Try to deliver with Cloudfront distribution.
+Task : Complete SNS Task
+https://github.com/avizway1/sns-project-repo 
+
+Task : Complete SQS Task
+https://github.com/avizway1/sqs-project-repo
+
+
+Task : Implement IAM Authentication to our RDS. **Optional for Freshers. 
+https://youtu.be/YqwJmPmIo-k?si=Kv8YZrtjjp0zvlCc
+
+
+
+Capstone : Build and deliver 3 Tier Architecture using AWS resources.
+https://youtu.be/lh5f69t7L9A?si=fSa2e4e2-zRfZr1b
 
 
 ======================
 
-Migrate Server From One region to another region: DATA TRANSFER COST APPLY:  
+Task : DATA TRANSFER COST APPLY: 
+
+
+Migrate Server From One region to another region:  
 https://www.youtube.com/watch?v=fIEwoFaXExQ
 
 --> Launch an ec2 instance in Mumbai region, configure web server..  Migrate this instance to "mumbai" using MGN Service.
@@ -125,6 +137,3 @@ GCP to AWS / Anywhere to AWS : https://www.youtube.com/watch?v=8xf1RpPdcHs
 azure to aws migration : https://www.youtube.com/watch?v=bdaHMRqCBkg
 
 SMS with VMWARE : https://www.youtube.com/watch?v=Vx9lRRY-shg
-
-
-
