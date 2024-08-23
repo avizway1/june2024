@@ -53,7 +53,45 @@ Task : Run nodejs application and nginx as a service/task on ecs cluster. Refer 
 -> Create a Service with multiple tasks and Integrate with Load Balancer.
 
 
-=========================================================================
+========================================================================================
+
+D: 23/08/2024
+
+How many Account you manage : .?
+
+For Every CLient : Sandbox/Training (POC), Dev, SIT/SQA, UAT and PRD ==> 5 Accounts
+Central logging account and Management Account
+
+Interview : Atleast 7 Accounts..
+
+AWS Organisations along with SSO: 
+
+Management account : From single aws account, we can manage multiple accounts. Centralized billing option for multiple aws accounts. 
+
+SCP : Service Control Policy : We can apply policy at Org level / OU level to manage permissions on AWS accounts.
+
+identity source : SSO / Active Directory
+Permission Sets : set of permissions in aws.
+you can see/find only org joined aws accounts in SSO.
+
+
+AD : https://www.youtube.com/watch?v=RDlBoAHVmZs
+Ad Connector : https://www.youtube.com/watch?v=Ca259gg6SoM
+Linux to AD : https://www.youtube.com/watch?v=LWi9-XL2vWQ
+
+Switch role : https://www.youtube.com/watch?v=sZiiB4yF0VY
+
+==============================================================================================
+
+
+Task : AWS Batch service.
+https://youtu.be/Ym9HWYFwFS8?si=HIM5SHe01UC5mtDk
+
+Task : Configure ETL process.
+https://youtu.be/1IJJmWKzeXQ?si=lv6lTdA_XI8vELQq
+
+==============================================================================================
+
 
 
 
