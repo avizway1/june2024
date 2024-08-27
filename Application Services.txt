@@ -91,7 +91,6 @@ https://youtu.be/1IJJmWKzeXQ?si=lv6lTdA_XI8vELQq
 
 ==============================================================================================
 
-
 D: 26/08/2024
 
 AWS Lambda : Serverless architecture. 
@@ -140,11 +139,7 @@ Task :
 
 ======================================================================================================
 
-
-
-
-
-
+D: 27/08/2024
 
 AWS Cloudformation : IaC Infrastructure as Code : JSON/YAML : 
 --> it's free. 
@@ -164,17 +159,12 @@ https://aws.amazon.com/blogs/machine-learning/plant-leaf-disease-detection-with-
 
 YAML https://www.youtube.com/watch?v=1tROGN8lw_Y
 
-Cloudformation Playlist: https://www.youtube.com/playlist?list=PLneBjIzDLECnvHUiqAe5DYHcnXSOTWeXO
-
 ==============================================================================
 
 1. Launch an ec2 instance and use Former2 browser extension and generate the CF script and deploy it. 
 
-2. Create an s3 bucket and configure lifecycle rule. Use Former2 to generate the cft and deploy it by changing the bucket name and test it.
+2. Create an s3 bucket and configure lifecycle rule. Use chatGPT/Former2 to generate the cft and deploy it by changing the bucket name and test it.
 
-3. Launch an ec2 instance using cloudformation template. While launching use userdata to make it webserver also, open post 80 and 22 open for everyone. Deploy it and test it.
+3. Launch an ec2 instance using cloudformation template. While launching use userdata to make it webserver also, open post 80 and 22 open for everyone by Creating a New Security group. Deploy it and test it.
 
 Do the above tasks with the help of chatgpt, if required. 
-
-
-
