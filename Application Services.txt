@@ -168,3 +168,78 @@ YAML https://www.youtube.com/watch?v=1tROGN8lw_Y
 3. Launch an ec2 instance using cloudformation template. While launching use userdata to make it webserver also, open post 80 and 22 open for everyone by Creating a New Security group. Deploy it and test it.
 
 Do the above tasks with the help of chatgpt, if required. 
+
+================================================================================
+
+D: 28/08/2024
+
+Codecommit
+CodeDeploy
+Codepipeline
+codebuild
+
+"S3/codecommit/git" --> Deploy to "ElasticBeanstalk"
+
+________________
+
+Create an IAM user, Make sure he has "Adminaccess / Codecommit full access", Generate "programatic keys (Accesskeyid&secretaccesskey)" and configure it in your local laptop.
+
+aws configure
+accesskey : 
+secretaccesskey : 
+region : ap-south-1
+output :  
+
+You need to have some softwares. 
+1. Install Python
+2. Install git
+3. install grc : pip install git-remote-codecommit
+
+
+git add .
+git status
+git commit -m "commit msg"
+git push
+git pull
+git clone
+git init
+
+git init
+git status
+git add .
+git commit -m "commit msg"
+git remote add origin https://github.com/avizway1/aws730repo.git
+git push -u origin master
+
+
+rebase option : 
+git fetch origin
+git rebase origin/master
+git push -u origin master
+
+
+
+Task : get familier with above commands.
+
+
+GIT : 
+https://www.youtube.com/watch?v=rtI26X6FJX0&list=PLneBjIzDLECkdgoinrTO7D519zgPEmcte
+
+
+English : Allow me 2 weeks
+
+
+GIT in Telugu : https://youtube.com/playlist?list=PLneBjIzDLECn9mfKLdwHK_5nQHvFH44PL&si=D8N2_0WCoGMb7UPV
+
+Maven in Telugu : https://www.youtube.com/playlist?list=PLneBjIzDLECmfpxTEVxRKiwuEN7SC1nem
+
+Jenkins in Telugu : https://www.youtube.com/playlist?list=PLneBjIzDLEClYnrjUyz3_-KUeXGBuj5F6
+
+================================================================================
+
+
+Task : Create a gitHub repo and add some code (index.html), push code to repo.
+Create a CICD pipeline, and deploy this code to ElasticBeanstalk.
+
+
+
